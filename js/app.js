@@ -38,16 +38,17 @@ function LoadFunctions() {
 //Validar en caso haya un destinario
 const validateRecipient = (e => {
     if (e.target.value != '') {
-        if(!ValidateEmail(e.target.value)){
-            ShowAlert(`Destinatario inconrrecto`, e.target.parentElement);
-            e.target.name = '';
-            return;
-        }
-        //Asigna a destonario
-        e.target.name = e.target.value.trim().toLowerCase();
         
-        cleanAlert(e.target.parentElement);
     }
+    if(!ValidateEmail(e.target.value)){
+        ShowAlert(`Destinatario inconrrecto`, e.target.parentElement);
+        e.target.name = '';
+        return;
+    }
+    //Asigna a destonario
+    e.target.name = e.target.value.trim().toLowerCase();
+    
+    cleanAlert(e.target.parentElement); 
 });
 
 //Validar Mensaje
